@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+
+        <title>Frontend Mentor | Interactive rating component</title>
+
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="margin-auto">
+            <div class="card">
+                <!-- Rating state start -->
+                <div class="circle" id="star">
+                    <img src="./images/icon-star.svg" alt="" />
+                </div>
+                <div><h1 class="margin-zero">How did we do?</h1></div>
+                <div>
+                    <p class="margin-zero">
+                        Please let us know how we did with your support request.
+                        All feedback is appreciated to help us improve our
+                        offering!
+                    </p>
+                </div>
+                <div class="div-equal-distribution-row">
+                    <div class="circle" id="rate1">1</div>
+                    <div class="circle" id="rate2">2</div>
+                    <div class="circle" id="rate3">3</div>
+                    <div class="circle" id="rate4">4</div>
+                    <div class="circle" id="rate5">5</div>
+                </div>
+                <div class="submitBtn" id="submit">Submit</div>
+
+                <!-- Rating state end -->
+            </div>
+        </div>
+
+        <!-- Adding 'click' event -->
+        <script>
+            const elementCircles = document.querySelectorAll('.circle')
+
+            elementCircles.forEach((elementCircle) => {
+                // Adding click event to rating state
+                elementCircle.addEventListener('click', () => {
+                    // On click change rating state
+                    var circles = document.querySelectorAll('.circle')
+                    circles.forEach((circle) => {
+                        console.log(circle)
+                        if (circle.id === event.target.id) {
+                            document
+                                .getElementById(circle.id)
+                                .classList.toggle('circle-focus')
+                        } else {
+                            document
+                                .getElementById(circle.id)
+                                .classList.remove('circle-focus')
+                        }
+                    })
+                })
+            })
+
+            // Submit button event handling
+            var btnAdd = document.getElementById('submit')
+            btnAdd.addEventListener('click', callNextPage)
+
+            function callNextPage() {
+                var selectedValue = null
+                var circles = document.querySelectorAll('.circle')
+                console.log(circles)
+                circles.forEach((circle) => {
+                    if (circle.classList.contains('circle-focus')) {
+                        selectedValue = circle.innerHTML
+                    }
+                })
+                window.open(
+                    'thanks.html?selectedValue=' + selectedValue,
+                    '_self'
+                )
+            }
+        </script>
+    </body>
+</html>

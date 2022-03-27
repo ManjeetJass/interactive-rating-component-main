@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+.margin-auto {
+  margin: auto;
+}
+
+.margin-zero {
+  margin: 0;
+}
+
+body {
+  background-color: #121417;
+  color: white;
+  display: grid;
+  min-height: 100vh;
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+}
+
+p {
+  color: #7c8798;
+  line-height: 25px;
+}
+
+.div-equal-distribution-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.div-equal-distribution-col {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.card, .card--center {
+  background: #252d37;
+  border-radius: 30px;
+  padding: 30px;
+  max-width: 340px;
+  min-height: 340px;
+  margin: 25px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.card--center {
+  align-items: center;
+  text-align: center;
+}
+
+.circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #252d37;
+  filter: brightness(1.25);
+  color: #959eac;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+}
+
+.circle:hover {
+  background-color: #fb7413;
+  cursor: pointer;
+  color: white;
+}
+
+.circle-focus {
+  background-color: #959eac;
+  color: white;
+}
+
+.submitBtn {
+  height: 50px;
+  border-radius: 25px;
+  width: inherit;
+  border: 0;
+  background-color: #fb7413;
+  color: white;
+  text-transform: uppercase;
+  display: grid;
+  place-content: center;
+}
+
+.submitBtn:hover {
+  background-color: white;
+  color: #fb7413;
+  cursor: pointer;
+}
+
+.rating {
+  height: fit-content;
+  width: fit-content;
+  text-align: center;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+  border-radius: 1rem;
+  background-color: #252d37;
+  filter: brightness(1.25);
+  color: #fb7413;
+}
+
+/*# sourceMappingURL=style.css.map */
